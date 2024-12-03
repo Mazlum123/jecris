@@ -10,7 +10,8 @@
     "start": "node dist/index.js",
     "db:generate": "drizzle-kit generate:pg",
     "db:push": "drizzle-kit push:pg",
-    "db:studio": "drizzle-kit studio"
+    "db:studio": "drizzle-kit studio",
+    "test:db": "ts-node src/test-db.ts"
   },
   "keywords": [],
   "author": "",
@@ -31,6 +32,7 @@
     "@types/pg": "^8.11.10",
     "drizzle-kit": "^0.20.14",
     "nodemon": "^3.1.7",
+    "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
   }
 }
