@@ -1,0 +1,13 @@
+// _mixins.scss
+@mixin flex($direction: row, $justify: center, $align: center) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+  }
+
+  @mixin responsive($breakpoint) {
+    @media screen and (min-width: $breakpoint) {
+      @content;
+    }
+  }
