@@ -1,4 +1,20 @@
 // frontend/src/styles/main.scss
-@use 'variables';
-@use 'mixins';
-@use 'reset';
+@use 'base/reset';
+@use 'components/header';
+@use 'pages/home';
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #A5A5A5;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
