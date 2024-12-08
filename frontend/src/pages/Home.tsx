@@ -3,8 +3,16 @@ import { useState, useEffect } from 'react';
 import { bookService } from '../services/api';
 import Book from '../components/Book/Book';
 
+interface Book {
+  id: number;
+  title: string;
+  author: string;
+  price: number;
+  description: string;
+}
+
 export default function Home() {
-  const [books, setBooks] = useState([]);
+  const [books, setBooks] = useState<Book[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
@@ -24,16 +32,16 @@ export default function Home() {
   }, []);
 
   if (loading) return <div>Chargement...</div>;
-  if (error) return <div>{error}</div>;
+  if (error) return <div className="error">{error}</div>;
 
   return (
     <div className="home">
       <h1>Bibliothèque</h1>
       <div className="books-grid">
-        {books.map(book => (
+        {books.map((book) => (
           <Book key={book.id} {...book} />
         ))}
       </div>
     </div>
-    );
-  }
+  );
+}

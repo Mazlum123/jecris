@@ -1,3 +1,4 @@
+// src/db/schema/books.ts
 import { pgTable, serial, varchar, decimal, text } from 'drizzle-orm/pg-core';
 
 export const books = pgTable('books', {
